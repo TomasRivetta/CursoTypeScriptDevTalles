@@ -143,5 +143,5 @@ undefined es nada
 
 | Seccion | Numero | Tipo     | Solucion                          |
 | ------- | ------ | -------- | --------------------------------- |
-| 3       | 1      | Practico | [Ver solución](./Tareas/01app.ts) |
-| 3       | 1      | Teorico  | [Ver solución]()                  |
+| 3       | 1      | Practico | [Ver solución](./Tareas/01Practico.ts) |
+| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt)                  |
