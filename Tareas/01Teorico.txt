@@ -1,0 +1,58 @@
+¿Quién es el fundador de TypeScript?
+
+A - Google
+
+B - Microsoft ✅
+
+C - Angular
+
+D -React
+
+¿Cómo se define un arreglo de Strings en TypeScript?
+
+
+A - var arreglo = ["texto","texto","texto","texto"]
+
+B - let arreglo = ["texto","texto","texto","texto"]
+
+C - var arreglo:string[ ] = ["texto","texto","texto","texto"]
+
+D - let arreglo:string[ ] = ["texto","texto","texto","texto"]
+
+E - Todas las anteriores ✅
+
+¿El siguiente código es válido en TypeScript?
+
+let arr:number = [1,2,3,4,5,6,7,8,9,10];
+
+A - Verdadero
+
+B - Falso ✅
+
+¿El siguiente código es válido en TypeScript?
+
+let arr:any = [1,2,3,4,5,6,7,8,9,10];
+
+A - Verdadero ✅
+
+B - Falso 
+
+¿Qué es esto?
+
+let variable:[number,string,boolean] = [10,"texto",true];
+
+A - Arreglo
+
+B - String
+
+C - Tupla ✅
+
+D - Number
+
+¿El siguiente código es válido en TypeScript?
+
+let vacio:null = undefined;
+
+A - Verdadero
+
+B - Falso ✅
