@@ -139,6 +139,26 @@ despues de usar una funcion con never no se ejecuta nada despues de eso
 
 undefined es nada
 
+## Funciones y objetos
+
+```TS
+  const hero: string = "Flash";
+
+  function returnName():string //Especifico el tipo de dato que devuelve
+  {
+    return hero;
+  }
+
+  function returnName():void //Si es que no retorna nada
+  {
+   console.log('hola')
+  };
+
+  const activateBatisignal = (): string => {
+    return "Batiseñal activada";
+  };
+```
+
 ## TAREAS
 
 | Seccion | Numero | Tipo     | Solucion                          |
