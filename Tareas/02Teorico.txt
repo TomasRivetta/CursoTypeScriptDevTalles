@@ -1,0 +1,46 @@
+¿Toda función en JavaScript, es código válido de TypeScript?
+
+A - Verdadero ✅
+
+B - Falso
+
+¿Con qué caracter especifico un parámetro opcional?
+
+Seleccione sólo la mejor respuesta
+
+A - !
+
+B - ? ✅
+
+C - *
+
+D - ^
+
+E - *
+
+¿Qué es un parámetro por defecto?
+
+A - Es un parámetro obligatorio que debe ser enviado a la función al momento de ser llamada.
+
+B - Es un parámetro que puede ser enviado o no a la función al momento de ser llamada.
+
+C - Es un parametro que es necesario en la función, pero puede ser enviado o no al momento de ser llamada. ✅
+
+¿Los parámetros por defecto sólo pueden ser tipos primitivos?
+
+A - Verdadero
+
+B - Falso ✅
+
+¿Qué es un parámetro REST?
+
+A - Es un arreglo que contiene el resto de parametros enviados como argumentos a la función. ✅
+
+B - Es un arreglo que contiene todos los parámetros enviados a la función.
+
+
+¿Una función es a su vez, un tipo en TypeScript?
+
+A - Verdadero ✅
+
+B - Falso

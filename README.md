@@ -141,6 +141,8 @@ undefined es nada
 
 ## Funciones y objetos
 
+### Funciones basicas
+
 ```TS
   const hero: string = "Flash";
 
@@ -159,9 +161,99 @@ undefined es nada
   };
 ```
 
+### Parametros obligatorios de las funciones
+
+```TS
+  const fullName = (firstName:string, lastName:string): string => {
+    return `${firstName} ${lastName}`;
+  };
+
+  const name = fullName("Tony", "Stark");
+
+  console.log({ name });
+```
+
+### Parámetros opcionales de las funciones
+
+```TS
+  //                                Para que sea opcional
+  const fullName = (firstName: string, lastName?: string): string => {
+    return `${firstName} ${lastName || "---"}`;
+  };
+
+  const name = fullName("Tony");
+
+  console.log({ name });
+```
+
+Un parametro obligaotrio no puede ir despues de un parametro opcional, los parametros obligatorios van primero y al final de todo los opcionales
+
+### Parámetros por defecto
+
+```TS
+  const fullName = (
+    //Para que sea obligatorio
+    firstName: string,
+    //Para que sea opcional
+    lastName?: string,
+    //Parametro por defecto
+    upper: boolean = false
+  ): string => {
+    if (upper) {
+      return `${firstName} ${lastName || "---"}`.toUpperCase();
+    } else {
+      return `${firstName} ${lastName || "---"}`;
+    }
+  };
+
+  const name = fullName("Tony", "Stark");
+
+  console.log({ name });
+```
+
+### Parametros REST
+
+Resto de argumentos
+
+```TS
+  const fullName = (firstName: string, ...restArgs: string[]) => {
+    return `${firstName} ${restArgs.join(" ")}`;
+  };
+
+  const superman = fullName("Clark", "Joseph", "kent");
+
+  console.log({ superman });
+```
+
+### Tipo Funcion
+
+```TS
+  const addNumbers = (a: number, b: number) => a + b;
+
+  const greet = (name: string) => `Hola ${name}`;
+
+  const saveTheWorld = () => `El mundo esta salvado`;
+
+  //   myFunction = 10;
+  //   console.log(myFunction);
+
+  //   let myFunction: (y: number, z: number) => number;
+  //   myFunction = addNumbers;
+  //   console.log(myFunction(1, 2));
+
+  let myFunction: (y: string) => string;
+  myFunction = greet;
+  console.log(myFunction("Toto"));
+
+  myFunction = saveTheWorld;
+  console.log(myFunction());
+```
+
 ## TAREAS
 
-| Seccion | Numero | Tipo     | Solucion                          |
-| ------- | ------ | -------- | --------------------------------- |
+| Seccion | Numero | Tipo     | Solucion                               |
+| ------- | ------ | -------- | -------------------------------------- |
 | 3       | 1      | Practico | [Ver solución](./Tareas/01Practico.ts) |
-| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt)                  |
+| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt) |
+| 4       | 2      | Practico | [Ver solución](./Tareas/02Practico.ts) |
+| 4       | 2      | Teorico  | [Ver solución](./Tareas/02Teorico.txt) |
