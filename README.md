@@ -533,6 +533,117 @@ VAR no existe
   console.log(falcon);
 ```
 
+## Clases en TypeScript
+
+### Definición de una clase básica en TypeScript
+
+```TS
+  class Avenger {
+    private name: string;
+    //Solo tengo acceso en getter y setter
+    private team: string;
+
+    //Vista afuera de la clase
+    public realName: string;
+
+    static avgAge: number = 35;
+
+    constructor(name: string, team: string, realName?: string) {
+      this.name = name;
+      this.team = team;
+      this.realName = realName;
+    }
+  }
+
+  const antman: Avenger = new Avenger("Antman", "Capitan");
+
+  console.log(antman);
+```
+
+### Forma corta de asignar propiedades
+
+```TS
+  class Avenger {
+    //Solo tengo acceso en getter y setter
+    //Vista afuera de la clase
+
+    //Como es static no la vamos a mandar por argunento
+    static avgAge: number = 35;
+
+    constructor(
+      private name: string,
+      private team: string,
+      public realName?: string
+    ) {}
+  }
+
+  const antman: Avenger = new Avenger("Antman", "Capitan", "Scott Lang");
+
+  console.log(antman);
+```
+
+### Métodos públicos y privados
+
+```TS
+  class Avenger {
+    //Solo tengo acceso en getter y setter
+    //Vista afuera de la clase
+
+    //Como es static no la vamos a mandar por argunento
+    static avgAge: number = 35;
+
+    //Metodo static
+    static getAvgAge() {
+      return this.name;
+    }
+
+    constructor(
+      private name: string,
+      private team: string,
+      public realName?: string
+    ) {}
+
+    //Metodos publico
+    bio() {
+      return `${this.name} (${this.team})`;
+    }
+
+    //Metodo privado
+    // private bio() {
+    //   return `${this.name} (${this.team})`;
+    // }
+  }
+
+  const antman: Avenger = new Avenger("Antman", "Capitan", "Scott Lang");
+
+  console.log(antman);
+
+  console.log(antman.bio());
+
+  console.log(Avenger.getAvgAge());
+```
+
+### Herencia, super y extends
+
+### Gets y Sets
+
+Todos los getters deben de retornar algo
+
+Los setters no retornan nada
+
+### Clases Abstractas
+
+Las clases abstractas sirve para crear otras clases o que otras clases sean extendidasd de ella
+Para especificar que estoy esperando una clase un objeto o un argumento
+
+### Constructores privados
+
+vamos a controlar como vamos a ser llamado el constructor si le pongo private solo va a poder ser llamado dentro de la misma clase 
+
+## Interfaces
+
+### Interfaz básica
+
 ## TAREAS
 
 | Seccion | Numero | Tipo     | Solucion                               |
