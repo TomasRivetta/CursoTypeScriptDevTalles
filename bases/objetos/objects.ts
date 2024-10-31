@@ -23,4 +23,6 @@
     age: 60,
     powers: ["Super velocidad"],
   };
+
+  console.log(flash);
 })();

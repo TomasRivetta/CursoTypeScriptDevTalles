@@ -374,6 +374,50 @@ Resto de argumentos
 
 ## Depuración de Errores y el archivo tsconfig.json
 
+### ¿Qué es el archivo tsconfig y para qué nos puede servir?
+
+tsconfig nos sirve para decirle a ts como queremos que funcione, es decirle como queremos que funcione en nuestro proyecto, tiene el valor por defecto recomendado, que nos ayuda a tener una idea
+
+link para ver mas para tsconfig: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+### ¿Es posible la depuración del código de TypeScript?
+
+no hace referencia a realizar console log
+para depurar en TS tenemos que en el tsconfig.json buscar una propiedad que se llama sourceMap y descomentarla y volvemos a largar la terminal y podemos observar que ahora hay un tercer archivo .map es un mapa a la representacion propia de neustro codigo typeScript
+
+### Remover los comentarios de los archivos de JavaScript
+
+cuando se realiza la transpilaciona js van los comentarios tambien
+
+en el TSCONFIG, hay una opcion que se llama
+removeComments , la descomentamos
+y no se van a subir los comentarios a la web
+
+### Incluir y excluir carpetas y/o archivos
+
+Va a haber carpertas o archivos que no queremos que se suban, el node_modules esta excluido automaticamente.
+En el tsconfig colocamos al final de todo en un nuevo objeto
+Por ejemplo:
+
+```JSON
+{
+  "configs de ts": [],
+  // Esto excluye de la carpeta objetos los archivos con el tipo .ts
+ "exclude": ["objetos/*.ts"]
+}
+```
+
+nunca hay que poner a compilar node modules
+
+### outFile - Archivo de salida
+
+No vamos a querer tener tanto desorden en nuestros archivos, vamos a combinar todos nuestros archivos de TS en un unico archivo de JS o varios
+
+Si trabajamos con alguna libreria ya viene configurado
+en el tsconfig descomentamos una opcion que se llama '"outFile": "./"' se le puede cambiar el nombre "outFile": "./main.js" y cambiamos de module: common a amd
+
+cuando tengo el archivo de salida puedo borrar los archivos generados con el comando tsc -w
+y ponemos en el index.html el main.js
 
 
 ## TAREAS

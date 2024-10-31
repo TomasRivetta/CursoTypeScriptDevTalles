@@ -5,4 +5,7 @@
   const villans = ['Omega','Duende Verde']
 
   villans.forEach(v => console.log(v.toUpperCase()))
+
+  numbers.forEach(v => console.log(v))
+
 })();
