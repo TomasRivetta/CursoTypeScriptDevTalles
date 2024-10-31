@@ -249,11 +249,140 @@ Resto de argumentos
   console.log(myFunction());
 ```
 
+## Objetos y tipos personalizados en TypeScript
+
+### Objetos basicos
+
+```TS
+  //Objeto literal
+  let flash = {
+    name: "Barry Allen",
+    age: 24,
+    powers: ["Super velocidad", "Viajar en el tiempo"],
+  };
+  //No permite agregar propiedades si no estan en la base del objeto creada
+  flash = {
+    name: "Clark Kent",
+    age: 60,
+    powers: ["Super Fuerza"],
+    getNombre() {
+      return this.name;
+    },
+  };
+```
+
+### ¿Cómo crear objetos con tipos específicos?
+
+```TS
+  //Defino el tipo de cada propiedad que va a tener el objeto
+  let flash: { name: string; age: number; powers: string[] } = {
+    name: "Barry Allen",
+    age: 24,
+    powers: ["Super velocidad", "Viajar en el tiempo"],
+  };
+```
+
+### Métodos dentro de los objetos
+
+```
+  //Objeto literal
+  let flash: {
+    name: string;
+    age?: number;
+    powers: string[];
+    //Creamos esta propiedad con el signo de pregunta ya que va a ser opcional y va a retornar un string
+    getName?: () => string;
+  } = {
+    name: "Barry Allen",
+    age: 24,
+    powers: ["Super velocidad", "Viajar en el tiempo"],
+  };
+
+  flash = {
+    name: "Clark Kent",
+    //age: 60,
+    powers: ["Super Fuerza"],
+    getName() {
+      return this.name;
+    },
+  };
+```
+
+### Problema con la definición en línea y Tipos personalizados
+
+```TS
+  //Obligar y poner reglas al objeto o variable que estemos definiendo
+  type Hero = {
+    name: string;
+    age?: number;
+    powers: string[];
+    getName?: () => string;
+  };
+
+  //Objeto literal
+  let flash: Hero = {
+    name: "Barry Allen",
+    age: 24,
+    powers: ["Super velocidad", "Viajar en el tiempo"],
+  };
+
+  let superman: Hero = {
+    name: "Clark kent",
+    age: 60,
+    powers: ["Super velocidad"],
+    getName() {
+      return this.name;
+    },
+  };
+
+  /*
+   El error sugiere que TypeScript detecta la posibilidad de que la propiedad getName podría ser undefined. Para solucionarlo, puedes verificar si getName existe antes de intentar invocarlo. Puedes hacerlo de la siguiente manera:
+   */
+  superman.getName ? console.log(superman.getName()) : "Name not available";
+
+  /*
+  Esto verifica si getName existe en el objeto flash antes de intentar llamarlo y proporciona una respuesta de respaldo si la propiedad está ausente. Esto debería evitar el error y mostrar "Name not available" en caso de que getName no esté definido en el objeto flash.
+   */
+```
+
+### Multiples tipos permitidos
+
+```TS
+  //Obligar y poner reglas al objeto o variable que estemos definiendo
+  type Hero = {
+    name: string;
+    age?: number;
+    powers: number[];
+    getName?: () => string;
+  };
+
+  let myCustomVariable: string | number | Hero = "Fernando";
+
+  console.log(typeof myCustomVariable);
+
+  myCustomVariable = 20;
+  console.log(typeof myCustomVariable);
+
+  myCustomVariable = {
+    name: "Bruce",
+    age: 43,
+    powers: [1],
+  };
+  console.log(typeof myCustomVariable);
+  console.log(myCustomVariable);
+```
+
+## Depuración de Errores y el archivo tsconfig.json
+
+
+
 ## TAREAS
 
-| Seccion | Numero | Tipo     | Solucion                               |
-| ------- | ------ | -------- | -------------------------------------- |
-| 3       | 1      | Practico | [Ver solución](./Tareas/01Practico.ts) |
-| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt) |
-| 4       | 2      | Practico | [Ver solución](./Tareas/02Practico.ts) |
-| 4       | 2      | Teorico  | [Ver solución](./Tareas/02Teorico.txt) |
+| Seccion | Numero | Tipo     | Solucion                                   |
+| ------- | ------ | -------- | ------------------------------------------ |
+| 3       | 1      | Practico | [Ver solución](./Tareas/01Practico.ts)     |
+| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt)     |
+| 4       | 2      | Practico | [Ver solución](./Tareas/02Practico.ts)     |
+| 4       | 2      | Teorico  | [Ver solución](./Tareas/02Teorico.txt)     |
+| 5       | 3      | Practico | [Ver solución](./Tareas/03Practico.ts.ts)  |
+| 5       | 3      | Teorico  | [Ver solución](./Tareas/03Teorico.txt.txt) |

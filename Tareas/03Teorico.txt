@@ -1,0 +1,30 @@
+
+2.
+¿Es posible agregar métodos dentro de los tipos?
+
+Si
+
+4.
+¿Es posible especificar en TypeScript que una variable puede ser de 4 tipos a la vez?
+
+Si
+
+7.
+¿Qué instrucción nos permite saber que tipo de dato contiene una variable?
+
+typeof
+
+8.
+¿Con qué palabra podemos crear tipos específicos?
+
+type
+
+9.
+¿Un tipo de dato puede tener métodos obligatorios?
+
+Si
+
+10.
+¿Los tipos son traducidos a JavaScript?
+
+No, los tipos sólo existen en TypeScript para brindarnos control sobre los objetos.
