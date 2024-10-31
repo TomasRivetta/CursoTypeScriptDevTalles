@@ -419,14 +419,128 @@ en el tsconfig descomentamos una opcion que se llama '"outFile": "./"' se le pue
 cuando tengo el archivo de salida puedo borrar los archivos generados con el comando tsc -w
 y ponemos en el index.html el main.js
 
+## Características de ES6 o JavaScript2015 disponibles a través TypeScript
+
+### Variables LET
+
+VAR no existe
+
+### Desestructuración de Objetos
+
+```TS
+  type Avengers = {
+    nick: string;
+    ironman: string;
+    vision: string;
+    activo: boolean;
+    poder: number;
+  };
+
+  const avengers: Avengers = {
+    nick: "Samuel L. Jackson",
+    ironman: "Robet Downey JR",
+    vision: "Paul Bettany",
+    activo: true,
+    poder: 1500,
+  };
+
+  //Desestructuracion
+  //   const { poder, vision } = avengers;
+
+  //   console.log(poder, vision.toUpperCase());
+
+  //Desestructuracion y el resto
+  const printAvenger = ({ vision, ...resto }: Avengers) => {
+    console.log(vision, resto);
+  };
+
+  printAvenger(avengers);
+```
+
+### Desestructuración de Arreglos
+
+```TS
+  const avengersArr: [string, boolean, number] = ["Cap. America", true, 150];
+
+  //QUIRO EL SEGUNDO
+  //ignoro el primero
+  //Nombro la const
+  //ignoro el tercero
+  const [capi, ironman] = avengersArr;
+
+  // console.log(capi, ironman);
+```
+
+### Ciclo - For of
+
+```TS
+  type Avenger = {
+    name: string;
+    weapon: string;
+  };
+
+  const ironMan: Avenger = {
+    name: "IronMan",
+    weapon: "Armorsuit",
+  };
+
+  const capAmerica: Avenger = {
+    name: "capAmerica",
+    weapon: "Shield",
+  };
+
+  const thor: Avenger = {
+    name: "Thor",
+    weapon: "Mjolnir",
+  };
+
+  const avengers: Avenger[] = [ironMan, capAmerica, thor];
+
+  for (const avenger of avengers) {
+    console.log(avenger.name, " ", avenger.weapon);
+  }
+```
+
+### Clases en ES6
+
+```TS
+  class Avenger {
+    name;
+    power;
+
+    constructor(name = "No hay nombre", power = 0) {
+      this.name = name;
+      this.power = power;
+    }
+  }
+
+  class FlyingAvenger extends Avenger {
+    flying;
+
+    //Los parametros para el constructor super
+    constructor(name, power) {
+      //Llamo al constructor del padre (Avenger)
+      super(name, power);
+      this.flying = true;
+    }
+  }
+
+  const hulk = new Avenger("hULK", 9001);
+
+  const falcon = new FlyingAvenger("Falcon", 50);
+
+  console.log(hulk);
+  console.log(falcon);
+```
 
 ## TAREAS
 
-| Seccion | Numero | Tipo     | Solucion                                   |
-| ------- | ------ | -------- | ------------------------------------------ |
-| 3       | 1      | Practico | [Ver solución](./Tareas/01Practico.ts)     |
-| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt)     |
-| 4       | 2      | Practico | [Ver solución](./Tareas/02Practico.ts)     |
-| 4       | 2      | Teorico  | [Ver solución](./Tareas/02Teorico.txt)     |
-| 5       | 3      | Practico | [Ver solución](./Tareas/03Practico.ts.ts)  |
-| 5       | 3      | Teorico  | [Ver solución](./Tareas/03Teorico.txt.txt) |
+| Seccion | Numero | Tipo     | Solucion                               |
+| ------- | ------ | -------- | -------------------------------------- |
+| 3       | 1      | Practico | [Ver solución](./Tareas/01Practico.ts) |
+| 3       | 1      | Teorico  | [Ver solución](./Tareas/01Teorico.txt) |
+| 4       | 2      | Practico | [Ver solución](./Tareas/02Practico.ts) |
+| 4       | 2      | Teorico  | [Ver solución](./Tareas/02Teorico.txt) |
+| 5       | 3      | Practico | [Ver solución](./Tareas/03Practico.ts) |
+| 5       | 3      | Teorico  | [Ver solución](./Tareas/03Teorico.txt) |
+| 7       | 4      | Teorico  | [Ver solución](./Tareas/04Teorico.txt) |
