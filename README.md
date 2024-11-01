@@ -857,7 +857,28 @@ Se usa para añadir funcionalidades a un objeto
 
 ### Decoradores de propiedades
 
+## Usando librerías que no están escritas en TypeScript ( Como jQuery )
 
+### Inicio de proyecto - Express API
+
+npm init y damos todo enter esto va a generar nuestro package.json
+
+### Trabajar con TypeScript en lugar de JavaScript
+
+Creamos el tsconfig con tsc --init y en la raiz del proyecto creo la carpeta dist
+y en el tsconfig descomento la opcion 'outDir' y agrego la carpeta donde queremos que se guarden los archivos que transpilamos en este caso en la carpeta dist creada anteriormente
+
+instalamos el @types de express ya que no nos reconoce el require typeScript
+
+---
+
+Cual es la diferencia entre los archivos de tipos y las interfaces?
+
+Los archivos de tipos en TypeScript (index.d.ts) y las interfaces son formas de definir cómo se deben usar y estructurar los tipos de datos en tu código.
+
+Las interfaces son estructuras que describen la forma y estructura de un objeto o clase, permitiendo establecer qué propiedades o métodos debe tener. Los archivos de tipos son archivos separados que proporcionan información sobre cómo deben ser tratados ciertos módulos o librerías externas, permitiendo a TypeScript entender cómo se relacionan con tu código.
+
+Así que en pocas palabras las interfaces se usan para definir estructuras de datos internas, mientras que los archivos de tipos ayudan a trabajar con librerías externas.
 
 ## TAREAS
 
