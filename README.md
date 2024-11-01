@@ -803,6 +803,39 @@ https://github.com/Klerith/curso-typescript/tree/codigo-inicial
 
 ### Export default y exportación con alias
 
+## Genéricos - Generics
+
+### Introducción a los Genéricos
+
+### Funciones Genericas
+
+```TS
+//
+export const printObject = (argument: any) => {
+  console.log(argument);
+};
+//                    define que es algo generico
+export function genericFunction<T>(argument: T): T {
+  return argument;
+}
+
+export const genericFunctionArrow = <T>(argument: T) => {
+  return argument;
+};
+```
+
+### Ejemplo de función genérica en acción
+
+### Agrupar exportaciones
+
+creo un archivo index.ts, es el primer archivo que se carga al crear la web
+
+### Ejemplo aplicado de genéricos
+Es un paquete que nos permitira hacer muchas cosas con HTTP
+npm i axios
+
+### Mapear respuestas http
+
 
 
 ## TAREAS
