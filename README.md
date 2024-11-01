@@ -831,10 +831,31 @@ export const genericFunctionArrow = <T>(argument: T) => {
 creo un archivo index.ts, es el primer archivo que se carga al crear la web
 
 ### Ejemplo aplicado de genéricos
+
 Es un paquete que nos permitira hacer muchas cosas con HTTP
 npm i axios
 
 ### Mapear respuestas http
+
+## Decoradores
+
+### Introducción a los decoradores
+
+https://www.typescriptlang.org/docs/handbook/decorators.html
+
+No es mas que una simple funcion que se ejecuta en el momento de compilacion o transpilacion
+
+Se usa para añadir funcionalidades a un objeto
+
+### Decoradores de clases
+
+### Decoradores de fabrica - Factory decorators
+
+### Ejemplo de un decorador - Bloquear prototipo
+
+### Decoradores de métodos
+
+### Decoradores de propiedades
 
 
 
