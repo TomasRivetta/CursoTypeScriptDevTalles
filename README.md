@@ -638,11 +638,172 @@ Para especificar que estoy esperando una clase un objeto o un argumento
 
 ### Constructores privados
 
-vamos a controlar como vamos a ser llamado el constructor si le pongo private solo va a poder ser llamado dentro de la misma clase 
+vamos a controlar como vamos a ser llamado el constructor si le pongo private solo va a poder ser llamado dentro de la misma clase
 
 ## Interfaces
 
 ### Interfaz básica
+
+una interfaz funciona casi lo mismo que un tipo
+
+interfaz vs type : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces
+
+### Estructuras complejas
+
+```TS
+  interface Client {
+    name: string;
+    age?: number;
+    address: Address;
+  }
+
+  interface Address {
+    id: number;
+    zip: string;
+    city: string;
+  }
+
+  const client: Client = {
+    name: "Toto",
+    age: 25,
+    address: {
+      id: 125,
+      zip: "KY2 SUD",
+      city: "Ottawa",
+    },
+  };
+
+  const client2: Client = {
+    name: "Melissa",
+    age: 30,
+    address: {
+      id: 126,
+      zip: "5152A",
+      city: "VCP",
+    },
+  };
+```
+
+### Métodos en la interfaz
+
+```TS
+  interface Client {
+    name: string;
+    age?: number;
+    address: Address;
+    getFullAddress(id: string): string;
+  }
+
+  interface Address {
+    id: number;
+    zip: string;
+    city: string;
+  }
+
+  const client: Client = {
+    name: "Toto",
+    age: 25,
+    address: {
+      id: 125,
+      zip: "KY2 SUD",
+      city: "Ottawa",
+    },
+    getFullAddress(id: string) {
+      return this.address.zip;
+    },
+  };
+
+  const client2: Client = {
+    name: "Melissa",
+    age: 30,
+    address: {
+      id: 126,
+      zip: "5152A",
+      city: "VCP",
+    },
+    getFullAddress(id: string) {
+      return this.address.zip;
+    },
+  };
+```
+
+### Interfaces en las clases
+
+Forzamos que la clase tenga que implementar todo de la interfaz, mas si no sabemos si se va a extender o algo.
+En cambio si sabemos que no se va a extender podemos usar un type
+
+```TS
+  interface Xmen {
+    name: string;
+    realName: string;
+    mutantPower(id: number): string;
+  }
+
+  interface Human {
+    age: number;
+  }
+
+  class Mutant implements Xmen, Human {
+    public age: number;
+    public name: string;
+    public realName: string;
+
+    mutantPower(id: number): string {
+      return this.name + " " + this.realName;
+    }
+  }
+```
+
+### Interfaces para las funciones
+
+```TS
+  interface addTwoNumber {
+    (a: number, b: number): number;
+  }
+
+  let addNumbersFunction: addTwoNumber;
+  addNumbersFunction = (a: number, b: number) => {
+    return 10;
+  };
+```
+
+## NameSpaces
+
+### Creando un Namespace
+
+Es algo que se usa cada vez menos en desarrollo, pero SI en angular y demas
+las funciones anonimas autoinvocadas se pueden considerar nameSpaces.
+
+Nos sirve de agrupador para pdoer usarlo en otro lado
+
+```TS
+namespace Validations {
+  export const validateText = (text: string): boolean => {
+    return text.length > 3 ? true : false;
+    // if (text.length > 3) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+  };
+
+  export const validateDate = (fecha: Date): boolean => {
+    return isNaN(fecha.valueOf()) ? false : true;
+  };
+}
+
+console.log(Validations.validateText("Fer"));
+```
+
+### Inicio de proyecto - Módulos y Webpack
+
+https://github.com/Klerith/curso-typescript/tree/codigo-inicial
+
+### Imports y Exports
+
+### Export default y exportación con alias
+
+
 
 ## TAREAS
 
@@ -655,3 +816,5 @@ vamos a controlar como vamos a ser llamado el constructor si le pongo private so
 | 5       | 3      | Practico | [Ver solución](./Tareas/03Practico.ts) |
 | 5       | 3      | Teorico  | [Ver solución](./Tareas/03Teorico.txt) |
 | 7       | 4      | Teorico  | [Ver solución](./Tareas/04Teorico.txt) |
+| 8       | 5      | Teorico  | [Ver solución](./Tareas/05Teorico.txt) |
+| 8       | 5      | Practico | [Ver solución](./Tareas/05Practico.ts) |

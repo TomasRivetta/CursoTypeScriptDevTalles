@@ -109,5 +109,5 @@
   },
   "exclude": ["node_modules2"],
   //Incluime solo los arhivos de tal directorio
-  "include": ["classes"]
+  "include": ["namespaces"]
 }
